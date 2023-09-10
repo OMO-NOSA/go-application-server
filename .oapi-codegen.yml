@@ -1,0 +1,7 @@
+package: controllers
+generate:
+    chi-server: true
+    client: true
+    models: true
+output: controllers/openapi_http.gen.go
+
