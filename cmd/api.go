@@ -61,4 +61,5 @@ func startHTTP() {
 // - Chi Routers (Graceful shutdowns)
 // - Pointers, Struct, Interfaces
 // - Http Server Spinup
-// - 
+// - https://github.com/spf13/viper
+// -
