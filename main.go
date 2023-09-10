@@ -1,17 +1,9 @@
 package main
 
 import (
-	"log"
-	"net/http"
+	"github.com/OMO-NOSA/go-application-server/cmd"
 )
 
-type InMemoryPlayerStore struct{}
-
-func (i *InMemoryPlayerStore) GetPlayerScore(name string) int {
-	return 123
-}
-
 func main() {
-	server := &PlayerServer{&InMemoryPlayerStore{}}
-	log.Fatal(http.ListenAndServe(":6000", server))
+	cmd.Execute()
 }
