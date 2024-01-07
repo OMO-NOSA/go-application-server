@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/pkg/errors"
-
 	appconfig "github.com/OMO-NOSA/go-application-server/config"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

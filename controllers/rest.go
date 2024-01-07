@@ -1,26 +1,31 @@
 package controllers
 
 import (
-	"github.com/OMO-NOSA/go-application-server/config"
+	"time"
+	"context"
+	"net/http"
+	"github.com/gorilla/mux"
+
 )
 
 var globalHTTPServer httpServer
 
 type httpServer struct {}
 
-func newHttpServer() *httpServer{
-	return &httpServer{}
+func newHttpServer() httpServer{
+	return httpServer{}
 }
 
 func InitGlobalHTTPServer() {
 	globalHTTPServer = newHttpServer()
 }
 
-func runHTTPServer(ctx context.Context) {
-		server := &http.Server{
-		Addr:             ":" + config.AppConfig.PORT,
-		Handler:           nil,
-		WriteTImeout:      5 * time.Second,
+func RunHTTPServer(ctx context.Context) {
+	globalHTTPServer = newHttpServer()
+	_ = &http.Server{
+		Addr:             ":8000",
+		Handler:           InitRouter(ctx),
+		WriteTimeout:      5 * time.Second,
 		ReadTimeout:       5 * time.Second,
 		ReadHeaderTimeout: 5 * time.Second,
 	}

@@ -4,7 +4,7 @@ type AppConfig struct {
 	DatabaseURL            string
 	ApplicationEnvironment string
 	LogLevel               string
-	Port string
+	PORT string
 }
 
 func (ac *AppConfig) Defaults() map[string]string {
