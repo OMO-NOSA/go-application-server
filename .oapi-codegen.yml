@@ -4,4 +4,3 @@ generate:
     client: true
     models: true
 output: controllers/openapi_http.gen.go
-

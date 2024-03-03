@@ -8,6 +8,8 @@ import (
 
 )
 
+var _ ServerInterface = &httpServer{}
+
 var globalHTTPServer httpServer
 
 type httpServer struct {}
@@ -33,6 +35,6 @@ func RunHTTPServer(ctx context.Context) {
 
 func InitRouter(ctx context.Context) *mux.Router {
 	router := mux.NewRouter()
-	// r.Use() middleware 
+	router.HandleFunc("/user", globalHTTPServer.CreateUser)
 	return router
 }
