@@ -1,8 +1,9 @@
 package service
 
-import {
+import (
 	"github.com/omo-nosa/repository-pattern/internal"
-}
+	
+)
 
 type TodoRepository interface {
 	GetAll() ([]internal.Todo, error)
