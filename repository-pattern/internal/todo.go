@@ -1,5 +1,7 @@
 package internal
 
+import "errors"
+
 
 var (
 	ErrTitleCannotBeEmpty = errors.New("title cannot be empty")

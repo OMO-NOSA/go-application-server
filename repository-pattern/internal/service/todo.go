@@ -1,14 +1,11 @@
-//todo.go
-
 package service
 
 import {
-	"repository-pattern/internal"
+	"github.com/omo-nosa/repository-pattern/internal"
 }
 
-
 type TodoRepository interface {
-	GetAll() ([] internal.Todo, error)
+	GetAll() ([]internal.Todo, error)
 	Create(todo internal.Todo) error
 	FindById(id int) (internal.Todo, error)
     Update(todo internal.Todo) error
